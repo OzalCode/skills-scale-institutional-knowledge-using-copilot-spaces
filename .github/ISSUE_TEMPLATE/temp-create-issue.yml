@@ -1,0 +1,90 @@
+name: "Create README for OctoAcme Project Management Docs"
+description: "Create issue for README with project management processes summary and links to all docs"
+title: "[Process Doc Update]: Create README for OctoAcme Project Management Docs - Project Management Processes Summary and Links to All Docs"
+labels: ["documentation", "process improvement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Process Document Update Request
+
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update?"
+      description: "Select the program management process document you want to add content to. If this is a new process doc, choose the new document option."
+      options:
+        - octoacme-project-management-overview.md
+        - octoacme-project-initiation.md
+        - octoacme-project-planning.md
+        - octoacme-execution-and-tracking.md
+        - octoacme-risks-and-communication.md
+        - octoacme-release-and-deployment.md
+        - octoacme-retrospective-and-continuous-improvement.md
+        - octoacme-roles-and-personas.md
+        - "(New document: README.md)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      description: "Briefly describe the new content or update you want to add."
+      value: |
+        Create a comprehensive README.md file in the `docs/` directory that serves as the central entry point and navigation hub for all OctoAcme project management process documentation.
+
+        The README includes:
+        - Overview of OctoAcme's project management approach and core principles
+        - Five-phase project lifecycle (Initiation → Planning → Execution → Release → Retrospective)
+        - Organized table with links to all 8 process documents
+        - Quick-reference guide on how to use each document based on user scenarios
+        - Communication cadence summary
+        - Key principles at a glance
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      description: "Explain the reason for this addition."
+      value: |
+        This README centralizes all project management processes into a single, easily navigable hub. It addresses key gaps:
+
+        - **Centralize Knowledge**: Serves as a single hub for all project management processes, supporting the core purpose of the Copilot Space
+        - **Improve Discoverability**: Makes it easy for new and existing team members to find the right process guidance
+        - **Reduce Onboarding Time**: New team members can quickly understand OctoAcme's approach and find relevant docs
+        - **Provide Context**: Helps teams understand how individual processes fit into the overall project lifecycle
+        - **Enable Navigation**: Clear links and organization make it simple to find specific guidance
+    validations:
+      required: true
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content (optional)"
+      description: "The proposed README content has been drafted with all sections, links, and guidance."
+      value: |
+        See the README.md file created in docs/ folder with complete content including:
+        - Welcome and approach overview
+        - Five-phase project lifecycle
+        - Process documentation table mapping all 8 docs
+        - How to use the docs (scenario-based)
+        - Communication cadence reference
+        - Key principles summary
+        - Getting help guidance
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Verify all criteria are met"
+      options:
+        - label: "Content aligns with existing process docs"
+          required: true
+        - label: "Update improves clarity or closes a documented gap"
+          required: true
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
+          required: true
